@@ -6,13 +6,16 @@
 </head>
 <body>
 
-  <h1>Microsoft</h1>
-  <p>Open: {{ open }}$</p>
-  <p>High: {{ high }}$</p>
-  <p>Low: {{ low }}$</p>
-  <p>Price: {{ price }}$</p>
-  <p>Volume: {{ volume }}</p>
-  <p>Previous Close: {{ prev_close }}$</p>
+{% for share, data in stock_dict.items %}
+  <p>Symbol: {{ data.symbol }}</p>
+  <p>Open: {{ data.open }}$</p>
+  <p>High: {{ data.high }}$</p>
+  <p>Low: {{ data.low }}$</p>
+  <p>Price: {{ data.price }}$</p>
+  <p>Volume: {{ data.volume }}</p>
+  <p>Previous Close: {{ data.prev_close }}$</p>
+{% endfor %}
+
 
 </body>
 </html>
